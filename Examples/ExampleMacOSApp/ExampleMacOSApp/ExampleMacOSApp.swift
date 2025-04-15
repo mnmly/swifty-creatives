@@ -53,8 +53,11 @@ struct ExampleMacOSApp: App {
                         NavigationLink("Feature2") {
                             Feature2.VIEW()
                         }
-                        NavigationLink("Feature3") {
-                            Feature3.VIEW()
+//                        NavigationLink("Feature3") {
+//                            Feature3.VIEW()
+//                        }
+                        NavigationLink("Feature4") {
+                            Feature4.VIEW()
                         }
                     }
                 }

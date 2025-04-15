@@ -9,6 +9,10 @@
 #include "SharedIndices.h"
 using namespace metal;
 
+
+#ifndef Types_h
+#define Types_h
+
 struct FrameUniforms_ProjectionMatrix {
     float4x4 value;
 };
@@ -73,3 +77,5 @@ struct Vertex {
     float3 normal [[ attribute(VertexAttribute_Normal) ]];
     float4 color [[ attribute(VertexAttribute_Color) ]];
 };
+
+#endif

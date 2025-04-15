@@ -9,6 +9,9 @@
 #include "Types.metal"
 using namespace metal;
 
+#ifndef Functions_h
+#define Functions_h
+
 inline float4x4 createModelMatrix(
     Vertex vIn,
     const device FrameUniforms_ModelPos& uniformModelPos,
@@ -61,3 +64,5 @@ inline float4 createFog(float distance, float4 color, float density, float4 fogC
 inline float dist(float2 p1, float2 p2) {
     return pow(pow(p1.x - p2.x, 2) + pow(p1.y - p2.y, 2), 0.5);
 }
+
+#endif

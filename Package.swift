@@ -42,6 +42,25 @@ let SwiftyCreativesMacro = Target.macro(
     path: "Sources/SwiftyCreativesMacro"
 )
 
+let SwiftyCreativesMetalHeaders = Target.target(
+    name: "SwiftyCreativesMetalHeaders",
+    dependencies: [],
+    path: "Sources/SwiftyCreativesMetalHeaders",
+    resources: [
+        .copy("Include/SwiftyCreatives/Functions.metal"),
+        .copy("Include/SwiftyCreatives/Types.metal"),
+        .copy("Include/SwiftyCreatives/OIT.metal"),
+        .copy("Include/SwiftyCreatives/SharedIndices.h")
+    ],
+    publicHeadersPath: "Include",
+    cSettings: [
+        .headerSearchPath("Include")
+    ],
+    linkerSettings: [
+        .linkedFramework("Metal")
+    ]
+)
+
 let SwiftyCreatives = Target.target(
     name: "SwiftyCreatives",
     dependencies: [
@@ -81,12 +100,17 @@ let package = Package(
         .library(
             name: "SwiftyCreatives",
             targets: ["SwiftyCreatives"]
-        )
+        ),
+        .library(
+              name: "SwiftyCreativesMetalHeaders",
+              targets: ["SwiftyCreativesMetalHeaders"]
+          )
     ],
     dependencies: dependencies,
     targets: [
         SwiftyCreativesSound,
         SwiftyCreativesMacro,
+        SwiftyCreativesMetalHeaders,
         SwiftyCreatives,
         SwiftyCreativesTests,
     ]

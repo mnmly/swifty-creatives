@@ -19,7 +19,6 @@
 		56694B11298AB8EE0022C24D /* Sample4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56694B10298AB8EE0022C24D /* Sample4.swift */; };
 		566E503B2B6FB551002B98D6 /* Sample9.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566E503A2B6FB551002B98D6 /* Sample9.swift */; };
 		566E503D2B6FC549002B98D6 /* Sample10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566E503C2B6FC549002B98D6 /* Sample10.swift */; };
-		5675A0F8294B18A2005C25BD /* SwiftyCreatives in Frameworks */ = {isa = PBXBuildFile; productRef = 5675A0F7294B18A2005C25BD /* SwiftyCreatives */; };
 		569A83992999236000F62062 /* Sample6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569A83982999236000F62062 /* Sample6.swift */; };
 		569EBEAE2995583D0090F5AB /* Sample5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569EBEAD2995583D0090F5AB /* Sample5.swift */; };
 		56C53FC7294A645100962DD6 /* ExampleMacOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C53FC6294A645100962DD6 /* ExampleMacOSApp.swift */; };
@@ -27,6 +26,10 @@
 		56C53FCE294A645200962DD6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56C53FCD294A645200962DD6 /* Preview Assets.xcassets */; };
 		56D33F1E2C5DE9CF000D4E0D /* sphere.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 56D33F1C2C5DE9CF000D4E0D /* sphere.mtl */; };
 		56D33F1F2C5DE9CF000D4E0D /* sphere.obj in Resources */ = {isa = PBXBuildFile; fileRef = 56D33F1D2C5DE9CF000D4E0D /* sphere.obj */; };
+		9987FD1F2DAD8A5700AAE4E1 /* CustomShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = 9987FD1E2DAD8A5100AAE4E1 /* CustomShader.metal */; };
+		99EBBC622DAA3FDA00A5AF9D /* Feature4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EBBC612DAA3FDA00A5AF9D /* Feature4.swift */; };
+		99F8A4482DAE494F00F6BB6B /* SwiftyCreatives in Frameworks */ = {isa = PBXBuildFile; productRef = 99F8A4472DAE494F00F6BB6B /* SwiftyCreatives */; };
+		99F8A44A2DAE49EC00F6BB6B /* SwiftyCreativesMetalHeaders in Frameworks */ = {isa = PBXBuildFile; productRef = 99F8A4492DAE49EC00F6BB6B /* SwiftyCreativesMetalHeaders */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +55,8 @@
 		56C53FCF294A645200962DD6 /* ExampleMacOSApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ExampleMacOSApp.entitlements; sourceTree = "<group>"; };
 		56D33F1C2C5DE9CF000D4E0D /* sphere.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sphere.mtl; sourceTree = "<group>"; };
 		56D33F1D2C5DE9CF000D4E0D /* sphere.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sphere.obj; sourceTree = "<group>"; };
+		9987FD1E2DAD8A5100AAE4E1 /* CustomShader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = CustomShader.metal; sourceTree = "<group>"; };
+		99EBBC612DAA3FDA00A5AF9D /* Feature4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feature4.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +64,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5675A0F8294B18A2005C25BD /* SwiftyCreatives in Frameworks */,
+				99F8A44A2DAE49EC00F6BB6B /* SwiftyCreativesMetalHeaders in Frameworks */,
+				99F8A4482DAE494F00F6BB6B /* SwiftyCreatives in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +92,8 @@
 		5668C0882C5DE37000082B71 /* FeatureExamples */ = {
 			isa = PBXGroup;
 			children = (
+				9987FD1E2DAD8A5100AAE4E1 /* CustomShader.metal */,
+				99EBBC612DAA3FDA00A5AF9D /* Feature4.swift */,
 				5668C0892C5DE37F00082B71 /* Feature1.swift */,
 				5668C08B2C5DE38D00082B71 /* Feature2.swift */,
 				5668C08D2C5DE3B500082B71 /* Feature3.swift */,
@@ -167,7 +175,8 @@
 			);
 			name = ExampleMacOSApp;
 			packageProductDependencies = (
-				5675A0F7294B18A2005C25BD /* SwiftyCreatives */,
+				99F8A4472DAE494F00F6BB6B /* SwiftyCreatives */,
+				99F8A4492DAE49EC00F6BB6B /* SwiftyCreativesMetalHeaders */,
 			);
 			productName = ExampleMacOSApp;
 			productReference = 56C53FC3294A645100962DD6 /* ExampleMacOSApp.app */;
@@ -231,10 +240,12 @@
 				56C53FC7294A645100962DD6 /* ExampleMacOSApp.swift in Sources */,
 				5643923329A187740053C6E6 /* Sample8.swift in Sources */,
 				569EBEAE2995583D0090F5AB /* Sample5.swift in Sources */,
+				9987FD1F2DAD8A5700AAE4E1 /* CustomShader.metal in Sources */,
 				5668C08C2C5DE38D00082B71 /* Feature2.swift in Sources */,
 				566E503B2B6FB551002B98D6 /* Sample9.swift in Sources */,
 				566E503D2B6FC549002B98D6 /* Sample10.swift in Sources */,
 				569A83992999236000F62062 /* Sample6.swift in Sources */,
+				99EBBC622DAA3FDA00A5AF9D /* Feature4.swift in Sources */,
 				5643923129A14E2F0053C6E6 /* Sample7.swift in Sources */,
 				56694B09298AB8840022C24D /* Sample3.swift in Sources */,
 				56694B11298AB8EE0022C24D /* Sample4.swift in Sources */,
@@ -382,6 +393,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
+				MTL_HEADER_SEARCH_PATHS = "/Users/mnmly/Development-local/GitHub/swift/swifty-creatives/Sources/SwiftyCreativesMetalHeaders/Include";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yukiny.swiftyCreatives.ExampleMacOSApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -412,6 +424,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
+				MTL_HEADER_SEARCH_PATHS = "/Users/mnmly/Development-local/GitHub/swift/swifty-creatives/Sources/SwiftyCreativesMetalHeaders/Include";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yukiny.swiftyCreatives.ExampleMacOSApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -443,9 +456,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5675A0F7294B18A2005C25BD /* SwiftyCreatives */ = {
+		99F8A4472DAE494F00F6BB6B /* SwiftyCreatives */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SwiftyCreatives;
+		};
+		99F8A4492DAE49EC00F6BB6B /* SwiftyCreativesMetalHeaders */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SwiftyCreativesMetalHeaders;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
