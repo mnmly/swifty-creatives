@@ -138,6 +138,10 @@ class TransparentRenderer: RendererBase {
         self.drawProcess.afterCommit(texture: renderPassDescriptor.colorAttachments[0].texture)
         #endif
     }
+    
+    override func getRenderPipelineState() -> (any MTLRenderPipelineState)? {
+        return pipelineState
+    }
 }
 
 #endif

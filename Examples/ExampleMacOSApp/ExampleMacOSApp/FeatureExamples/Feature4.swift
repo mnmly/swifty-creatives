@@ -75,25 +75,33 @@ final class Feature4: Sketch {
     }
 
     override func draw(encoder: SCEncoder) {
-//        color(1, 1, 1, 1)
-////        box(10)
-//        push {
-//            translate(10, 0, 0)
-//            box(5)
-//        }
-
         // 2. Draw a green box using the custom grayscale shader
       grayscaleShader.apply(encoder: encoder) {
           // Bind uniforms for the grayscale shader *before* drawing
           encoder.setFragmentBytes(&self.intensity, length: MemoryLayout<Float>.stride, index: 20) // Index 20 matches shader
       } _: { // No custom textures needed for this shader
           // Drawing commands that will use the grayscale shader
-          color(0, 1, 0, 1) // Set base color (will be turned gray)
+          color(0, 1, 0, 0.5) // Set base color (will be turned gray)
           push {
               translate(0, 0, 0)
               box(5)
           }
-      } // End apply grayscaleShader
+      }
+        // End apply grayscaleShader
+        if let pipelineState = defaultRenderPipelineState {
+            encoder.setRenderPipelineState(pipelineState)
+        }
+        
+        let count = 20
+        for i in 0..<count {
+            color(1, Float(i) / 40, 0, 0.5)
+            push {
+                rotateY(Float.pi * 2 / Float(count) * Float(i))
+                translate(10, 0, 0)
+                box(0, 0, 0, 1, 1, 1)
+            }
+        }
+        
     }
 
     struct VIEW: View {

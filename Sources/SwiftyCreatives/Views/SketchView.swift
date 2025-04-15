@@ -31,6 +31,7 @@ public struct SketchView: ViewRepresentable {
             cameraConfig: cameraConfig,
             drawConfig: drawConfig
         )
+        self.drawProcess.defaultRenderPipelineState = self.renderer.getRenderPipelineState()
     }
     
     #if os(macOS)

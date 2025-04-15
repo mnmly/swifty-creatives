@@ -89,5 +89,9 @@ public class RendererBase: NSObject, MTKViewDelegate {
             height: Float(view.frame.size.height) * Float(drawConfig.contentScaleFactor)
         )
     }
+    // Add this method to be overridden by child classes
+    public func getRenderPipelineState() -> MTLRenderPipelineState? {
+        return nil // Base implementation returns nil
+    }
 }
 #endif

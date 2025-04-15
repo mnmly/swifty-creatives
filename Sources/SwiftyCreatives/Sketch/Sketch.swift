@@ -19,6 +19,7 @@ open class Sketch: FunctionBase {
     public var metalDrawableSize: f2 = .zero
     public var customMatrix: [f4x4] = [f4x4.createIdentity()]
     public var privateEncoder: SCEncoder?
+    open var defaultRenderPipelineState: MTLRenderPipelineState?
     public var deltaTime: Float = 0
     public var frameRate: Float { 1 / deltaTime }
     public var packet: SCPacket {

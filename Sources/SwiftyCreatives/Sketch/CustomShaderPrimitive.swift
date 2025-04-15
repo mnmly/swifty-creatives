@@ -100,6 +100,8 @@ public class CustomShaderPrimitive {
          // --- Set Custom State ---
          encoder.setRenderPipelineState(customPipelineState)
          encoder.setDepthStencilState(customDepthStencilState) // Ensure consistent depth testing
+        
+        
 
          // --- Bind Custom Data ---
          // User binds their specific buffers/textures needed by *their* shader
